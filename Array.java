@@ -56,6 +56,6 @@ public class Array{
             
 
        
-
+sc.close();
     }
 }
