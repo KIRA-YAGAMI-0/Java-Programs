@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-class BankAccount {
+class BankAccount_2ndVersion{
     String accountNumber;
     String accountHolderName;
     double balance;
 
-    public BankAccount(String accNum, String ach, double bal) {
+    public BankAccount_2ndVersion(String accNum, String ach, double bal) {
         accountNumber = accNum;
         accountHolderName = ach;
         balance = bal;
@@ -36,7 +36,7 @@ class BankAccount {
 }
 
 class Transaction {
-    public void transferFunds(BankAccount sender, BankAccount receiver, double amount) {
+    public void transferFunds(BankAccount_2ndVersion sender, BankAccount_2ndVersion receiver, double amount) {
         if (sender.balance >= amount) {
             sender.withdraw(amount);
             receiver.deposit(amount);
@@ -48,7 +48,7 @@ System.out.println("Transfer successful!");
     }
 }
 
-public class Bankk {
+public class Bank_2ndVersion {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -60,7 +60,7 @@ public class Bankk {
         System.out.print("Enter the initial balance:");
         double bl=sc.nextDouble();
 
-        BankAccount send = new BankAccount(acc, acch,bl);
+        BankAccount_2ndVersion send = new BankAccount_2ndVersion(acc, acch,bl);
         System.out.println("For receiver:");
         System.out.print("Enter the account number:");
         String acc1 =sc.next();
@@ -68,7 +68,7 @@ public class Bankk {
         String acch1=sc.next();
         System.out.print("Enter the initial balance:");
         double bl1=sc.nextDouble();
-        BankAccount rec = new BankAccount(acc1, acch1, bl1);
+        BankAccount_2ndVersion rec = new BankAccount_2ndVersion(acc1, acch1, bl1);
 
         System.out.println("Sender Account Details:");
         send.displayAccountDetails();
@@ -90,5 +90,6 @@ public class Bankk {
 
         System.out.println("\nUpdated Receiver Account Details:");
         rec.displayAccountDetails();
+        sc.close();
     }
 }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class BankAccount {
+class BankAccount_FinalVersion {
     String accountNumber;
     String accountHolderName;
     double balance;
@@ -9,7 +9,7 @@ class BankAccount {
     double intt;
     Scanner sc = new Scanner(System.in);
 
-    public BankAccount(String accNum, String ach, double bal) {
+    public BankAccount_FinalVersion(String accNum, String ach, double bal) {
         accountNumber = accNum;
         accountHolderName = ach;
         balance = bal;
@@ -45,12 +45,12 @@ class BankAccount {
         }
     }
 
-    public void transferBalance(BankAccount receiver, double amount) {
+    public void transferBalance(BankAccount_FinalVersion receiver, double amount) {
         receiver.deposit(amount);
         balance -= amount;
     }
 
-    public boolean compareAccount(BankAccount otherAccount) {
+    public boolean compareAccount(BankAccount_FinalVersion otherAccount) {
         if (balance == otherAccount.balance) {
             System.out.println("The account balance  is equal:");
             return true;
@@ -100,7 +100,7 @@ class BankAccount {
 }
 
 class Transaction {
-    void transferFunds(BankAccount sender, BankAccount receiver, double amount) {
+    void transferFunds(BankAccount_FinalVersion sender, BankAccount_FinalVersion receiver, double amount) {
         if (sender.balance > 0 && sender.balance >= amount) {
 
             sender.withdraw(amount);
@@ -112,7 +112,7 @@ class Transaction {
 
     }
 
-    boolean validateTransfer(BankAccount sender, BankAccount receiver,
+    boolean validateTransfer(BankAccount_FinalVersion sender, BankAccount_FinalVersion receiver,
             double amount) {
         if (sender.balance > 0 && sender.balance >= amount) {
             System.out.println("The transfer is valid:");
@@ -123,7 +123,7 @@ class Transaction {
         }
     }
 
-    void displayTransactionSummary(BankAccount sender, BankAccount receiver, double amount) {
+    void displayTransactionSummary(BankAccount_FinalVersion sender, BankAccount_FinalVersion receiver, double amount) {
         System.out.println("Transaction Summary:");
         System.out.println("Sender's Account Number:" + sender.accountNumber);
         System.out.println("Sender's Name:" + sender.accountHolderName);
@@ -135,7 +135,7 @@ class Transaction {
 
     }
 
-    boolean isSufficientFunds(BankAccount sender, double amount) {
+    boolean isSufficientFunds(BankAccount_FinalVersion sender, double amount) {
         if (sender.balance > 0 && sender.balance >= amount) {
             System.out.println("The funds are sufficient:");
             return true;
@@ -145,7 +145,7 @@ class Transaction {
         }
     }
 
-    void cancelTransfer(BankAccount sender, BankAccount receiver, double amount) {
+    void cancelTransfer(BankAccount_FinalVersion sender, BankAccount_FinalVersion receiver, double amount) {
         System.out.println("The transfer is cancelled:");
         System.out.println("The amount of " + amount + " is transfered back to " + sender.accountHolderName);
         sender.deposit(amount);
@@ -153,7 +153,7 @@ class Transaction {
         System.out.println("The transfer is cancelled successfully:");
     }
 
-    void notifyTransferCompletion(BankAccount sender, BankAccount receiver,
+    void notifyTransferCompletion(BankAccount_FinalVersion sender, BankAccount_FinalVersion receiver,
             double amount) {
         System.out.println("The transfer is completed successfully:");
         System.out.println("The amount of " + amount + " is transfered from " + sender.accountHolderName + " to "
@@ -161,7 +161,7 @@ class Transaction {
 
     }
 
-    void applyTransactionFee(BankAccount sender, double fee) {
+    void applyTransactionFee(BankAccount_FinalVersion sender, double fee) {
         if (sender.balance > 10000.00) {
             
             sender.balance -= fee;
@@ -184,7 +184,7 @@ boolean validateTransactionAmount(double amount){
         return false;}
 }
 
-    void deductServiceCharge(BankAccount sender, double serviceCharge) {
+    void deductServiceCharge(BankAccount_FinalVersion sender, double serviceCharge) {
         if (sender.balance > 10000.00) {
             serviceCharge = 5.00;
             sender.balance -= serviceCharge;
@@ -197,7 +197,7 @@ boolean validateTransactionAmount(double amount){
         }
     }
 
-    void reverseTransaction(BankAccount sender, BankAccount receiver,
+    void reverseTransaction(BankAccount_FinalVersion sender, BankAccount_FinalVersion receiver,
             double amount) {
         System.out.println("The transaction is being reversed ....");
         sender.deposit(amount);
@@ -208,10 +208,10 @@ boolean validateTransactionAmount(double amount){
 
 }
 
-public class Bankkk {
+public class Final_BankProject {
     public static void main(String[] args) {
-        BankAccount Alice = new BankAccount("123456", "Alice", 5000);
-        BankAccount Bob = new BankAccount("789101", "Bob", 5000);
+        BankAccount_FinalVersion Alice = new BankAccount_FinalVersion("123456", "Alice", 5000);
+        BankAccount_FinalVersion Bob = new BankAccount_FinalVersion("789101", "Bob", 5000);
         Transaction tra = new Transaction();
         System.out.println("Sender's Account Details:");
         Alice.displayAccountDetails();
