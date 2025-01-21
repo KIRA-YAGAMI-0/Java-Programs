@@ -17,5 +17,6 @@ public class Ascending {
             System.out.println(a[i]);
             System.out.println();
         }
+        
     }}
 
