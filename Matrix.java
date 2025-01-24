@@ -16,14 +16,14 @@ public class Matrix {
         }
 
         System.out.println("Please ! Enter the element of another 2X2 matrix:");
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a.length; j++) {
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b.length; j++) {
                 b[i][j] = sc.nextInt();
             }
         }
         System.out.println("The sum of the 2X2 matrix is:");
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a.length; j++) {
+        for (int i = 0; i < c.length; i++) {
+            for (int j = 0; j < c.length; j++) {
                 c[i][j]=a[i][j]+b[i][j];
                 System.out.print(c[i][j]+" ");
             }
