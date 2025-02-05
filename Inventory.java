@@ -81,5 +81,7 @@ obj.displayTotalStocks();
 obj.identifyLowStocks();
 obj.ArrangingAscendingOrder();
 obj.displayProductLists();  
+System.out.println();
     }
+
 }
