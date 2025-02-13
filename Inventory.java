@@ -5,6 +5,7 @@ class InventoryItems{
     String products[] = new String[10];
     int quantity[] = new int[10];
     int sum = 0;
+    int count=0;
     int temp;
     String temp1;
 
@@ -34,15 +35,20 @@ class InventoryItems{
         // System.out.println("The stocks which have level below 10:");
         for (int i = 0; i < quantity.length; i++) {
             if (quantity[i] < 10) {
-                System.out.println("These products need restocking:");
-                System.out.println(products[i] + " : X" + quantity[i]);
-
-            } else{
-
-                
-                
-            }
+                count++;
+            } 
             
+        }
+        if (count>0) {
+            System.out.println("These products need restocking:");
+            for (int i = 0; i < products.length; i++) {
+                if (quantity[i] < 10){
+
+                    System.out.println(products[i] + " : X" + quantity[i]);
+                }
+            }
+        }else{
+            System.out.println("No stocking needed!");
         }
     }
     void ArrangingAscendingOrder(){
