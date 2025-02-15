@@ -70,12 +70,16 @@ class InventoryItems{
     }
     void displayProductLists(){
         System.out.println();
+        ArrangingAscendingOrder();
         System.out.println("The list of products are:");
         for (int i = 0; i < quantity.length; i++) {
             System.out.println(products[i] + " : X" + quantity[i]);
         }
+        System.out.println();
+        System.out.println("The Highest stock product is:"+products[0]+"\t X"+quantity[0]);
+        System.out.println("The Lowest stock product is:"+products[9]+"\t X"+quantity[9]);
     }
-
+   
 }
 public class Inventory {
     public static void main(String[] args) {
